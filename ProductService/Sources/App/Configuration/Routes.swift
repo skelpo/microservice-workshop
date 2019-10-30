@@ -3,7 +3,7 @@ import Vapor
 import JWTMiddleware
 
 public func routes(_ router: Router, _ container: Container) throws {
-    let root = router.grouped(any, "users")
+    let root = router.grouped(any, "products")
     
     root.get("health") { _ in
         return "all good"
