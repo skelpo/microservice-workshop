@@ -9,7 +9,7 @@ final class AuthController: RouteCollection {
     
     func boot(routes: RoutesBuilder) throws {
         routes.post("register", use: register)
-        routes.grouped(JWTMiddleware()).post("login", use: login)
+        routes.post("login", use: login)
         routes.post("accessToken", use: refreshAccessToken)
     }
     
@@ -26,7 +26,6 @@ final class AuthController: RouteCollection {
         
         let count = User.query(on: request.db).filter(\.$email == user.email).count()
         return count.flatMap { count -> EventLoopFuture<User> in
-            print("we have an answer")
             if count > 0 {
                 return request.eventLoop.makeFailedFuture(Abort(.badRequest, reason: "This email is already registered."))
             }
