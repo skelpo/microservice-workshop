@@ -1,0 +1,15 @@
+{
+    "totalAmount": 100,
+    "firstname": "Tim",
+    "lastname": "Cook",
+    "street": "Apple 1",
+    "zip": "90000",
+    "city": "Cuppertino",
+    "items": [
+        {
+            "productId": 10,
+            "unitPrice": 10,
+            "quantity": 10
+        }
+    ]
+}
